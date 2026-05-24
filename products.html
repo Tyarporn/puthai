@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ผลิตภัณฑ์ — P.H. Foods Thailand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><img src="http://phfoodsthailand.com/images/logo-phuthai.gif" alt="P.H. Foods"></a>
+    <div class="header-right">
+      <div class="search-wrap"><input type="text" placeholder="ค้นหา / Search…"><button>🔍</button></div>
+      <div class="lang-switcher"><a href="#" class="lang-btn active">TH</a><a href="#" class="lang-btn">EN</a></div>
+    </div>
+    <button class="hamburger" aria-label="เมนู"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="main-nav">
+  <div class="container">
+    <ul class="nav-list">
+      <li class="has-dropdown"><a href="about.html">เกี่ยวกับเรา</a>
+        <ul class="dropdown"><li><a href="about.html">ข้อมูลบริษัท</a></li><li><a href="about.html#policy">นโยบาย</a></li><li><a href="about.html#certificate">มาตรฐานที่ได้รับ</a></li></ul>
+      </li>
+      <li class="nav-sep"></li>
+      <li class="has-dropdown"><a href="products.html" class="active">ผลิตภัณฑ์</a>
+        <ul class="dropdown"><li><a href="products.html">สินค้าปูไทย</a></li><li><a href="products.html#new">สินค้าใหม่</a></li></ul>
+      </li>
+      <li class="nav-sep"></li><li><a href="team.html">ทีมงาน</a></li><li class="nav-sep"></li>
+      <li class="has-dropdown"><a href="advertise.html">โฆษณา</a>
+        <ul class="dropdown"><li><a href="advertise.html">TVC โฆษณา</a></li><li><a href="activity.html">กิจกรรม</a></li></ul>
+      </li>
+      <li class="nav-sep"></li>
+      <li class="has-dropdown"><a href="question.html">คำถาม</a>
+        <ul class="dropdown"><li><a href="question.html">ถาม-ตอบ</a></li><li><a href="question.html#tips">เกร็ดน่ารู้</a></li></ul>
+      </li>
+      <li class="nav-sep"></li><li><a href="contact.html">ติดต่อเรา</a></li><li class="nav-sep"></li><li><a href="career.html">ร่วมงาน</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="about.html">เกี่ยวกับเรา</a><a href="about.html" class="sub-link">↳ ข้อมูลบริษัท</a><a href="about.html#policy" class="sub-link">↳ นโยบาย</a><a href="about.html#certificate" class="sub-link">↳ มาตรฐานที่ได้รับ</a>
+  <a href="products.html">ผลิตภัณฑ์</a><a href="products.html" class="sub-link">↳ สินค้าปูไทย</a>
+  <a href="team.html">ทีมงาน</a><a href="advertise.html">โฆษณา</a><a href="advertise.html" class="sub-link">↳ TVC โฆษณา</a><a href="activity.html" class="sub-link">↳ กิจกรรม</a>
+  <a href="question.html">คำถาม</a><a href="question.html" class="sub-link">↳ ถาม-ตอบ</a><a href="question.html#tips" class="sub-link">↳ เกร็ดน่ารู้</a>
+  <a href="contact.html">ติดต่อเรา</a><a href="career.html">ร่วมงาน</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <img src="http://phfoodsthailand.com/images/home_hero_banner.jpg" alt="ผลิตภัณฑ์ปูไทย">
+  <div class="page-hero-overlay">
+    <div class="page-hero-text container">
+      <h1 data-en="Pu Thai Products">ผลิตภัณฑ์ปูไทย</h1>
+      <p data-en="Premium fried &amp; baked snacks in 5 popular flavours">ขนมทอดกรอบและขนมอบกรอบคุณภาพสูง 5 รสชาติยอดนิยม</p>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER -->
+<section class="section-sm" style="background:var(--cream); border-bottom:1px solid var(--cream-dark);">
+  <div class="container" style="text-align:center;">
+    <div style="display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <button class="btn btn-primary btn-sm" data-filter="all" data-en="All">ทั้งหมด</button>
+      <button class="btn btn-outline btn-sm" data-filter="pepper" style="border-color:#c0392b;color:#c0392b;" data-en="Black Pepper">รสพริกไทยดำ</button>
+      <button class="btn btn-outline btn-sm" data-filter="squid" style="border-color:#2980b9;color:#2980b9;" data-en="Squid">รสปลาหมึก</button>
+      <button class="btn btn-outline btn-sm" data-filter="chicken" style="border-color:#e67e22;color:#e67e22;" data-en="Roasted Chicken">รสไก่อบ</button>
+      <button class="btn btn-outline btn-sm" data-filter="seaweed" style="border-color:#27ae60;color:#27ae60;" data-en="Seaweed">กลิ่นรสสาหร่าย</button>
+      <button class="btn btn-outline btn-sm" data-filter="choc" style="border-color:#6d4c41;color:#6d4c41;" data-en="Chocolate">เคลือบช็อคโกแลต</button>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2 data-en="Pu Thai Products">สินค้าปูไทย</h2>
+      <p class="sub" data-en="High-quality snacks from selected ingredients, GMP &amp; HACCP certified">ขนมทอดกรอบคุณภาพดี ผลิตจากวัตถุดิบคัดสรร รับรองมาตรฐาน GMP &amp; HACCP</p>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Black Pepper -->
+      <div class="product-card" data-flavor="pepper">
+        <div class="flavor-stripe" style="background:#c0392b;"></div>
+        <div class="product-card-header" style="background:rgba(192,57,43,.04);">
+          <img src="http://phfoodsthailand.com/images/products/pack/pepper.png" alt="รสพริกไทยดำ">
+          <div class="product-name-th">ปูไทย รสพริกไทยดำ</div>
+          <div class="product-name-en">Pu Thai Black Pepper Flavour</div>
+          <div class="product-tagline" data-en="Bold &amp; Spicy — Authentic Black Pepper Flavour">รสจัดจ้าน เผ็ดร้อน กลิ่นพริกไทยดำแท้</div>
+        </div>
+        <div class="product-card-body">
+          <table class="product-detail-table">
+            <tr><td data-en="Size">ขนาด</td><td><span class="sku-tag">5 g</span><span class="sku-tag">10 g</span><span class="sku-tag">20 g</span></td></tr>
+            <tr><td data-en="Packaging">บรรจุ</td><td data-en="Pack / Bag / Pouch">แพ็ค / ห่อ / ถุง</td></tr>
+            <tr><td data-en="Item Code">รหัสสินค้า</td><td><span class="sku-tag">PEPPER-05</span><span class="sku-tag">PEPPER-10</span><span class="sku-tag">PEPPER-20</span></td></tr>
+            <tr><td data-en="Note">หมายเหตุ</td><td data-en="HALAL · FDA">ฮาลาล • อย.</td></tr>
+          </table>
+          <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;" data-en="🛒 Buy on Shopee">🛒 ซื้อบน Shopee</a>
+        </div>
+      </div>
+
+      <!-- Squid -->
+      <div class="product-card" data-flavor="squid">
+        <div class="flavor-stripe" style="background:#2980b9;"></div>
+        <div class="product-card-header" style="background:rgba(41,128,185,.04);">
+          <img src="http://phfoodsthailand.com/images/products/pack/squid.png" alt="รสปลาหมึก">
+          <div class="product-name-th">ปูไทย รสปลาหมึก</div>
+          <div class="product-name-en">Pu Thai Squid Flavour</div>
+          <div class="product-tagline" data-en="Rich &amp; Savory — True Squid Flavour">กลมกล่อม กลิ่นปลาหมึกแท้ อร่อยถึงใจ</div>
+        </div>
+        <div class="product-card-body">
+          <table class="product-detail-table">
+            <tr><td data-en="Size">ขนาด</td><td><span class="sku-tag">5 g</span><span class="sku-tag">10 g</span><span class="sku-tag">20 g</span></td></tr>
+            <tr><td data-en="Packaging">บรรจุ</td><td data-en="Pack / Bag / Pouch">แพ็ค / ห่อ / ถุง</td></tr>
+            <tr><td data-en="Item Code">รหัสสินค้า</td><td><span class="sku-tag">SQUID-05</span><span class="sku-tag">SQUID-10</span><span class="sku-tag">SQUID-20</span></td></tr>
+            <tr><td data-en="Note">หมายเหตุ</td><td data-en="HALAL · FDA">ฮาลาล • อย.</td></tr>
+          </table>
+          <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;" data-en="🛒 Buy on Shopee">🛒 ซื้อบน Shopee</a>
+        </div>
+      </div>
+
+      <!-- Chicken -->
+      <div class="product-card" data-flavor="chicken">
+        <div class="flavor-stripe" style="background:#e67e22;"></div>
+        <div class="product-card-header" style="background:rgba(230,126,34,.04);">
+          <img src="http://phfoodsthailand.com/images/products/pack/chick.png" alt="รสไก่อบ">
+          <div class="product-name-th">ปูไทย รสไก่อบ</div>
+          <div class="product-name-en">Pu Thai Roasted Chicken Flavour</div>
+          <div class="product-tagline" data-en="Fragrant Roasted Chicken — Intense Every Bite">หอมกรุ่นไก่อบ เข้มข้นทุกคำ</div>
+        </div>
+        <div class="product-card-body">
+          <table class="product-detail-table">
+            <tr><td data-en="Size">ขนาด</td><td><span class="sku-tag">5 g</span></td></tr>
+            <tr><td data-en="Packaging">บรรจุ</td><td data-en="Pack / Bag">แพ็ค / ห่อ</td></tr>
+            <tr><td data-en="Item Code">รหัสสินค้า</td><td><span class="sku-tag">CHICKEN-05</span></td></tr>
+            <tr><td data-en="Note">หมายเหตุ</td><td data-en="HALAL · FDA">ฮาลาล • อย.</td></tr>
+          </table>
+          <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;" data-en="🛒 Buy on Shopee">🛒 ซื้อบน Shopee</a>
+        </div>
+      </div>
+
+      <!-- Seaweed -->
+      <div class="product-card" data-flavor="seaweed">
+        <div class="flavor-stripe" style="background:#27ae60;"></div>
+        <div class="product-card-header" style="background:rgba(39,174,96,.04);">
+          <img src="http://phfoodsthailand.com/images/products/pack/nori.png" alt="กลิ่นรสสาหร่าย">
+          <div class="product-name-th">ปูไทย กลิ่นรสสาหร่าย</div>
+          <div class="product-name-en">Pu Thai Seaweed Flavour</div>
+          <div class="product-tagline" data-en="Fresh &amp; Light — Japanese Seaweed Flavour">สดชื่น กลิ่นสาหร่ายญี่ปุ่น ทานเพลิน</div>
+        </div>
+        <div class="product-card-body">
+          <table class="product-detail-table">
+            <tr><td data-en="Size">ขนาด</td><td><span class="sku-tag">5 g</span><span class="sku-tag">20 g</span></td></tr>
+            <tr><td data-en="Packaging">บรรจุ</td><td data-en="Pack / Pouch">แพ็ค / ถุง</td></tr>
+            <tr><td data-en="Item Code">รหัสสินค้า</td><td><span class="sku-tag">SEAWEED-05</span><span class="sku-tag">SEAWEED-20</span></td></tr>
+            <tr><td data-en="Note">หมายเหตุ</td><td data-en="HALAL · FDA">ฮาลาล • อย.</td></tr>
+          </table>
+          <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;" data-en="🛒 Buy on Shopee">🛒 ซื้อบน Shopee</a>
+        </div>
+      </div>
+
+      <!-- Chocolate -->
+      <div class="product-card" data-flavor="choc">
+        <div class="flavor-stripe" style="background:#6d4c41;"></div>
+        <div class="product-card-header" style="background:rgba(109,76,65,.04);">
+          <img src="http://phfoodsthailand.com/images/products/pack/choc.png" alt="เคลือบช็อคโกแลต">
+          <div class="product-name-th">ปูไทย เคลือบช็อคโกแลต</div>
+          <div class="product-name-en">Pu Thai Chocolate Coated</div>
+          <div class="product-tagline" data-en="Sweet Chocolate Coating — Doubly Delicious">หวานมันช็อคโกแลต เคลือบกรอบ อร่อยสองต่อ</div>
+        </div>
+        <div class="product-card-body">
+          <table class="product-detail-table">
+            <tr><td data-en="Size">ขนาด</td><td><span class="sku-tag">5 g</span><span class="sku-tag">20 g</span></td></tr>
+            <tr><td data-en="Packaging">บรรจุ</td><td data-en="Pack / Pouch">แพ็ค / ถุง</td></tr>
+            <tr><td data-en="Item Code">รหัสสินค้า</td><td><span class="sku-tag">CHOCO-05</span><span class="sku-tag">CHOCO-20</span></td></tr>
+            <tr><td data-en="Note">หมายเหตุ</td><td data-en="FDA Certified">อย.</td></tr>
+          </table>
+          <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;margin-top:16px;text-align:center;" data-en="🛒 Buy on Shopee">🛒 ซื้อบน Shopee</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTS STRIP -->
+<section class="section-sm">
+  <div class="container">
+    <div class="certs-strip">
+      <div class="cert-item"><div class="cert-icon">🏆</div><span>GMP Certified</span></div>
+      <div class="cert-item"><div class="cert-icon">✅</div><span>HACCP Certified</span></div>
+      <div class="cert-item"><div class="cert-icon">🌙</div><span>HALAL Certified</span></div>
+      <div class="cert-item"><div class="cert-icon">⭐</div><span data-en="FDA Certified">มาตรฐาน อย.</span></div>
+      <div class="cert-item"><div class="cert-icon">🌏</div><span data-en="International Export">ส่งออกต่างประเทศ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-content">
+        <h2 data-en="Order Online at Shopee!">สั่งซื้อออนไลน์ได้แล้วที่ Shopee!</h2>
+        <p data-en="Convenient delivery to your door. Order Pu Thai in all flavours today.">สะดวก รวดเร็ว จัดส่งถึงบ้าน สั่งปูไทยครบทุกรสได้เลยวันนี้</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener" class="btn btn-white" data-en="🛒 Shop on Shopee">🛒 ช้อปบน Shopee</a>
+        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.6);color:#fff;" data-en="Contact Us">ติดต่อเรา</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="http://phfoodsthailand.com/images/logo-phuthai.gif" alt="P.H. Foods">
+        <p data-en="P.H. Foods Co., Ltd., founded in 1950, a leading producer of fried &amp; baked snacks under the Pu Thai and Rodo brands.">บริษัท พี.เอช.ฟู้ดส์ จำกัด ก่อตั้งเมื่อปี พ.ศ. 2493 ผู้นำด้านการผลิตขนมทอดกรอบและขนมอบกรอบ</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/PuthaiSnack/" target="_blank" rel="noopener">f</a>
+          <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener">🛒</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>เมนู</h5><ul><li><a href="about.html">เกี่ยวกับเรา</a></li><li><a href="products.html">ผลิตภัณฑ์</a></li><li><a href="team.html">ทีมงาน</a></li><li><a href="contact.html">ติดต่อเรา</a></li><li><a href="career.html">ร่วมงาน</a></li></ul></div>
+      <div class="footer-col"><h5>สินค้า</h5><ul><li><a href="products.html">ปูไทย รสพริกไทยดำ</a></li><li><a href="products.html">ปูไทย รสปลาหมึก</a></li><li><a href="products.html">ปูไทย รสไก่อบ</a></li><li><a href="products.html">ปูไทย กลิ่นรสสาหร่าย</a></li><li><a href="products.html">ปูไทย เคลือบช็อคโกแลต</a></li></ul></div>
+      <div class="footer-col"><h5>ติดต่อ</h5><p>33/1 ม.1 ซ.วัดอ้อมใหญ่ ถ.เพชรเกษม<br>ต.อ้อมใหญ่ อ.สามพราน นครปฐม 73160</p><p>📞 02-813-9730-32</p><a href="mailto:info@phfoodsthailand.com">info@phfoodsthailand.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 บริษัท พี.เอช.ฟู้ดส์ จำกัด · All rights reserved</p>
+      <div class="footer-badges"><span class="footer-badge">GMP</span><span class="footer-badge">HACCP</span><span class="footer-badge">HALAL</span></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

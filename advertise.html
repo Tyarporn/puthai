@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>โฆษณา TVC — P.H. Foods Thailand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><img src="http://phfoodsthailand.com/images/logo-phuthai.gif" alt="P.H. Foods"></a>
+    <div class="header-right">
+      <div class="search-wrap"><input type="text" placeholder="ค้นหา / Search…"><button>🔍</button></div>
+      <div class="lang-switcher"><a href="#" class="lang-btn active">TH</a><a href="#" class="lang-btn">EN</a></div>
+    </div>
+    <button class="hamburger" aria-label="เมนู"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="main-nav">
+  <div class="container">
+    <ul class="nav-list">
+      <li class="has-dropdown"><a href="about.html">เกี่ยวกับเรา</a>
+        <ul class="dropdown"><li><a href="about.html">ข้อมูลบริษัท</a></li><li><a href="about.html#policy">นโยบาย</a></li><li><a href="about.html#certificate">มาตรฐานที่ได้รับ</a></li></ul>
+      </li>
+      <li class="nav-sep"></li>
+      <li class="has-dropdown"><a href="products.html">ผลิตภัณฑ์</a>
+        <ul class="dropdown"><li><a href="products.html">สินค้าปูไทย</a></li><li><a href="products.html#new">สินค้าใหม่</a></li></ul>
+      </li>
+      <li class="nav-sep"></li><li><a href="team.html">ทีมงาน</a></li><li class="nav-sep"></li>
+      <li class="has-dropdown"><a href="advertise.html" class="active">โฆษณา</a>
+        <ul class="dropdown"><li><a href="advertise.html">TVC โฆษณา</a></li><li><a href="activity.html">กิจกรรม</a></li></ul>
+      </li>
+      <li class="nav-sep"></li>
+      <li class="has-dropdown"><a href="question.html">คำถาม</a>
+        <ul class="dropdown"><li><a href="question.html">ถาม-ตอบ</a></li><li><a href="question.html#tips">เกร็ดน่ารู้</a></li></ul>
+      </li>
+      <li class="nav-sep"></li><li><a href="contact.html">ติดต่อเรา</a></li><li class="nav-sep"></li><li><a href="career.html">ร่วมงาน</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="about.html">เกี่ยวกับเรา</a><a href="about.html" class="sub-link">↳ ข้อมูลบริษัท</a><a href="about.html#policy" class="sub-link">↳ นโยบาย</a><a href="about.html#certificate" class="sub-link">↳ มาตรฐานที่ได้รับ</a>
+  <a href="products.html">ผลิตภัณฑ์</a><a href="products.html" class="sub-link">↳ สินค้าปูไทย</a>
+  <a href="team.html">ทีมงาน</a><a href="advertise.html">โฆษณา</a><a href="advertise.html" class="sub-link">↳ TVC โฆษณา</a><a href="activity.html" class="sub-link">↳ กิจกรรม</a>
+  <a href="question.html">คำถาม</a><a href="question.html" class="sub-link">↳ ถาม-ตอบ</a><a href="question.html#tips" class="sub-link">↳ เกร็ดน่ารู้</a>
+  <a href="contact.html">ติดต่อเรา</a><a href="career.html">ร่วมงาน</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <img src="http://phfoodsthailand.com/images/home_hero_banner.jpg" alt="โฆษณา TVC">
+  <div class="page-hero-overlay">
+    <div class="page-hero-text container">
+      <h1 data-en="TVC Commercials">โฆษณา TVC</h1>
+      <p data-en="Watch all Pu Thai and Rodo TV commercials">ชมภาพยนตร์โฆษณาของปูไทยและโรโด้ทุกชุด</p>
+    </div>
+  </div>
+</div>
+
+<!-- TVC SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2 data-en="TV Commercials">ภาพยนตร์โฆษณา</h2>
+      <p class="sub" data-en="Browse our TV ads — click a thumbnail on the right to change the video">เลือกชมโฆษณาทีวีของเราได้เลย คลิกที่รายการด้านขวาเพื่อเปลี่ยนวิดีโอ</p>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="tvc-layout">
+      <!-- Main Player -->
+      <div>
+        <div class="tvc-main-video">
+          <iframe id="main-tvc-frame"
+            src="https://www.youtube.com/embed/h0ULNZcbk7E?rel=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="P.H. Foods TVC">
+          </iframe>
+        </div>
+        <p class="tvc-title" id="main-tvc-title" data-en="Rodo TVC">โฆษณา โรโด้</p>
+      </div>
+
+      <!-- Playlist -->
+      <div class="tvc-playlist">
+
+        <button class="tvc-thumb active"
+          data-video="h0ULNZcbk7E"
+          data-title="โฆษณา โรโด้">
+          <img src="https://img.youtube.com/vi/h0ULNZcbk7E/mqdefault.jpg" alt="โรโด้">
+          <div class="tvc-thumb-info">
+            <h5 data-en="Rodo TVC">โฆษณา โรโด้</h5>
+            <span>Rodo TVC</span>
+          </div>
+        </button>
+
+        <button class="tvc-thumb"
+          data-video="RwUH0VMZbPE"
+          data-title="โฆษณา ปูไทย ชุด 43">
+          <img src="https://img.youtube.com/vi/RwUH0VMZbPE/mqdefault.jpg" alt="โฆษณาชุด 43">
+          <div class="tvc-thumb-info">
+            <h5 data-en="Pu Thai Set 43">ปูไทย ชุด 43</h5>
+            <span data-en="TVC 2023">TVC ปี 2566</span>
+          </div>
+        </button>
+
+        <button class="tvc-thumb"
+          data-video="AECMBRzewsI"
+          data-title="โฆษณา ปูไทย ชุด 42">
+          <img src="https://img.youtube.com/vi/AECMBRzewsI/mqdefault.jpg" alt="โฆษณาชุด 42">
+          <div class="tvc-thumb-info">
+            <h5 data-en="Pu Thai Set 42">ปูไทย ชุด 42</h5>
+            <span data-en="TVC 2022">TVC ปี 2565</span>
+          </div>
+        </button>
+
+        <button class="tvc-thumb"
+          data-video="hNAq_KWM-P4"
+          data-title="โฆษณา ปูไทย ชุด 33">
+          <img src="https://img.youtube.com/vi/hNAq_KWM-P4/mqdefault.jpg" alt="โฆษณาชุด 33">
+          <div class="tvc-thumb-info">
+            <h5 data-en="Pu Thai Set 33">ปูไทย ชุด 33</h5>
+            <span data-en="Classic TVC">TVC คลาสสิก</span>
+          </div>
+        </button>
+
+        <button class="tvc-thumb"
+          data-video="aFgqWkjVDHU"
+          data-title="โฆษณา ปูไทย ชุด 28">
+          <img src="https://img.youtube.com/vi/aFgqWkjVDHU/mqdefault.jpg" alt="โฆษณาชุด 28">
+          <div class="tvc-thumb-info">
+            <h5 data-en="Pu Thai Set 28">ปูไทย ชุด 28</h5>
+            <span data-en="Classic TVC">TVC คลาสสิก</span>
+          </div>
+        </button>
+
+        <button class="tvc-thumb"
+          data-video="jSsx6off-3Y"
+          data-title="โฆษณา ปูไทย ชุด 10">
+          <img src="https://img.youtube.com/vi/jSsx6off-3Y/mqdefault.jpg" alt="โฆษณาชุด 10">
+          <div class="tvc-thumb-info">
+            <h5 data-en="Pu Thai Set 10">ปูไทย ชุด 10</h5>
+            <span data-en="Classic TVC">TVC คลาสสิก</span>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITY LINK -->
+<section class="section-sm" style="background:var(--cream);">
+  <div class="container" style="text-align:center;">
+    <h3 style="color:var(--text-dark);margin-bottom:12px;" data-en="See More of Our Activities">ดูกิจกรรมของเราเพิ่มเติม</h3>
+    <p style="color:var(--brown);margin-bottom:24px;" data-en="View photos from our trade show events, both domestic and international">ชมภาพกิจกรรมงานแสดงสินค้า Trade Fair ทั้งในและต่างประเทศ</p>
+    <a href="activity.html" class="btn btn-primary" data-en="View All Activities →">ดูกิจกรรมทั้งหมด →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="http://phfoodsthailand.com/images/logo-phuthai.gif" alt="P.H. Foods">
+        <p data-en="P.H. Foods Co., Ltd., founded in 1950, a leader in fried and baked snack production.">บริษัท พี.เอช.ฟู้ดส์ จำกัด ก่อตั้งเมื่อปี พ.ศ. 2493 ผู้นำด้านการผลิตขนมทอดกรอบและขนมอบกรอบ</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/PuthaiSnack/" target="_blank" rel="noopener">f</a>
+          <a href="https://shopee.co.th/puthai_officialshop" target="_blank" rel="noopener">🛒</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>เมนู</h5><ul><li><a href="about.html">เกี่ยวกับเรา</a></li><li><a href="products.html">ผลิตภัณฑ์</a></li><li><a href="team.html">ทีมงาน</a></li><li><a href="contact.html">ติดต่อเรา</a></li><li><a href="career.html">ร่วมงาน</a></li></ul></div>
+      <div class="footer-col"><h5>สินค้า</h5><ul><li><a href="products.html">ปูไทย รสพริกไทยดำ</a></li><li><a href="products.html">ปูไทย รสปลาหมึก</a></li><li><a href="products.html">ปูไทย รสไก่อบ</a></li><li><a href="products.html">ปูไทย กลิ่นรสสาหร่าย</a></li><li><a href="products.html">ปูไทย เคลือบช็อคโกแลต</a></li></ul></div>
+      <div class="footer-col"><h5>ติดต่อ</h5><p>33/1 ม.1 ซ.วัดอ้อมใหญ่ ถ.เพชรเกษม<br>ต.อ้อมใหญ่ อ.สามพราน นครปฐม 73160</p><p>📞 02-813-9730-32</p><a href="mailto:info@phfoodsthailand.com">info@phfoodsthailand.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 บริษัท พี.เอช.ฟู้ดส์ จำกัด · All rights reserved</p>
+      <div class="footer-badges"><span class="footer-badge">GMP</span><span class="footer-badge">HACCP</span><span class="footer-badge">HALAL</span></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
