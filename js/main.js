@@ -128,8 +128,159 @@ if ('IntersectionObserver' in window) {
   ).forEach(el => io2.observe(el));
 }
 
+// ── Site search ─────────────────────────────────────────
+(function () {
+  const INDEX = [
+    { th: 'ปูไทย รสพริกไทยดำ',            en: 'Pu Thai Black Pepper',          href: 'products.html', cat_th: 'สินค้า',   cat_en: 'Products' },
+    { th: 'ปูไทย รสปลาหมึก',               en: 'Pu Thai Squid',                 href: 'products.html', cat_th: 'สินค้า',   cat_en: 'Products' },
+    { th: 'ปูไทย รสไก่อบ',                 en: 'Pu Thai Roasted Chicken',       href: 'products.html', cat_th: 'สินค้า',   cat_en: 'Products' },
+    { th: 'ปูไทย กลิ่นรสสาหร่าย',          en: 'Pu Thai Seaweed',               href: 'products.html', cat_th: 'สินค้า',   cat_en: 'Products' },
+    { th: 'ปูไทย เคลือบช็อคโกแลต',         en: 'Pu Thai Chocolate',             href: 'products.html', cat_th: 'สินค้า',   cat_en: 'Products' },
+    { th: 'เกี่ยวกับเรา / ข้อมูลบริษัท',   en: 'About Us / Company Info',       href: 'about.html',    cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'นโยบายบริษัท',                  en: 'Company Policy',                href: 'about.html#policy',       cat_th: 'หน้า', cat_en: 'Pages' },
+    { th: 'มาตรฐานที่ได้รับ',              en: 'Certifications',                href: 'about.html#certificate',  cat_th: 'หน้า', cat_en: 'Pages' },
+    { th: 'ผลิตภัณฑ์ทั้งหมด',              en: 'All Products',                  href: 'products.html', cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'ทีมงาน',                        en: 'Our Team',                      href: 'team.html',     cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'โฆษณา TVC',                     en: 'TVC Commercials',               href: 'advertise.html',cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'กิจกรรม',                       en: 'Activities',                    href: 'activity.html', cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'คำถามที่พบบ่อย',               en: 'FAQ',                           href: 'question.html', cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'เกร็ดน่ารู้',                   en: 'Tips & Info',                   href: 'question.html#tips', cat_th: 'หน้า', cat_en: 'Pages' },
+    { th: 'ติดต่อเรา',                     en: 'Contact Us',                    href: 'contact.html',  cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'ร่วมงานกับเรา',                 en: 'Careers',                       href: 'career.html',   cat_th: 'หน้า',     cat_en: 'Pages' },
+    { th: 'สั่งซื้อสินค้าปูไทยออนไลน์ได้ที่ไหน', en: 'Where can I buy Pu Thai online?',         href: 'question.html', cat_th: 'คำถาม', cat_en: 'FAQ' },
+    { th: 'ปูไทยเคลือบช็อคโกแลตทำมาจากอะไร',     en: 'What is Pu Thai Chocolate made of?',       href: 'question.html', cat_th: 'คำถาม', cat_en: 'FAQ' },
+    { th: 'ปูไทยกลิ่นรสสาหร่ายใช้สาหร่ายจริงไหม',en: 'Does Pu Thai Seaweed use real seaweed?',   href: 'question.html', cat_th: 'คำถาม', cat_en: 'FAQ' },
+    { th: 'ปูไทยรสพริกไทยดำเผ็ดมากแค่ไหน',       en: 'How spicy is Pu Thai Black Pepper?',       href: 'question.html', cat_th: 'คำถาม', cat_en: 'FAQ' },
+    { th: 'ปูไทยมีปริมาณโซเดียมเท่าไหร่',         en: 'How much sodium is in Pu Thai?',           href: 'question.html', cat_th: 'คำถาม', cat_en: 'FAQ' },
+    { th: 'สินค้าปูไทยมีจำหน่ายในต่างประเทศไหม',  en: 'Is Pu Thai available internationally?',    href: 'question.html', cat_th: 'คำถาม', cat_en: 'FAQ' },
+  ];
+
+  document.querySelectorAll('.search-wrap').forEach(wrap => {
+    const input = wrap.querySelector('input');
+    const btn   = wrap.querySelector('button');
+
+    const dropdown = document.createElement('div');
+    dropdown.className = 'search-dropdown';
+    dropdown.setAttribute('role', 'listbox');
+    wrap.appendChild(dropdown);
+
+    let focusedIdx = -1;
+
+    function currentLang() {
+      return localStorage.getItem('ph_lang') || 'th';
+    }
+
+    function labelFor(item) {
+      return currentLang() === 'en' ? item.en : item.th;
+    }
+
+    function catFor(item) {
+      return currentLang() === 'en' ? item.cat_en : item.cat_th;
+    }
+
+    function getResults(q) {
+      const lq = q.toLowerCase().trim();
+      if (lq.length < 2) return [];
+      return INDEX.filter(item =>
+        item.th.toLowerCase().includes(lq) || item.en.toLowerCase().includes(lq)
+      ).slice(0, 10);
+    }
+
+    function renderDropdown(results) {
+      focusedIdx = -1;
+      dropdown.innerHTML = '';
+      if (!results.length) {
+        dropdown.innerHTML = `<div class="search-no-results">${currentLang() === 'en' ? 'No results found.' : 'ไม่พบผลลัพธ์'}</div>`;
+        dropdown.classList.add('open');
+        return;
+      }
+
+      const groups = {};
+      results.forEach(item => {
+        const cat = catFor(item);
+        if (!groups[cat]) groups[cat] = [];
+        groups[cat].push(item);
+      });
+
+      Object.entries(groups).forEach(([cat, items]) => {
+        const label = document.createElement('div');
+        label.className = 'search-group-label';
+        label.textContent = cat;
+        dropdown.appendChild(label);
+        items.forEach(item => {
+          const a = document.createElement('a');
+          a.className = 'search-result-item';
+          a.href = item.href;
+          a.textContent = labelFor(item);
+          a.setAttribute('role', 'option');
+          dropdown.appendChild(a);
+        });
+      });
+
+      dropdown.classList.add('open');
+    }
+
+    function closeDropdown() {
+      dropdown.classList.remove('open');
+      focusedIdx = -1;
+    }
+
+    function getFocusableItems() {
+      return Array.from(dropdown.querySelectorAll('.search-result-item'));
+    }
+
+    function moveFocus(dir) {
+      const items = getFocusableItems();
+      if (!items.length) return;
+      items.forEach(el => el.classList.remove('focused'));
+      focusedIdx = Math.max(0, Math.min(items.length - 1, focusedIdx + dir));
+      items[focusedIdx].classList.add('focused');
+    }
+
+    input.addEventListener('input', () => {
+      renderDropdown(getResults(input.value));
+    });
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); moveFocus(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); moveFocus(-1); }
+      else if (e.key === 'Enter') {
+        const items = getFocusableItems();
+        const target = focusedIdx >= 0 ? items[focusedIdx] : items[0];
+        if (target) { e.preventDefault(); window.location.href = target.href; }
+      }
+      else if (e.key === 'Escape') { closeDropdown(); input.blur(); }
+    });
+
+    btn.addEventListener('click', () => {
+      const results = getResults(input.value);
+      if (results.length) window.location.href = results[0].href;
+    });
+
+    document.addEventListener('click', e => {
+      if (!wrap.contains(e.target)) closeDropdown();
+    });
+  });
+})();
+
 // ── Language switcher ────────────────────────────────────
 (function () {
+  const PAGE_TITLES = {
+    'index.html':    { th: 'P.H. Foods Thailand — ปูไทย & โรโด้',    en: 'P.H. Foods Thailand — Pu Thai & Rodo' },
+    'about.html':    { th: 'เกี่ยวกับเรา — P.H. Foods Thailand',       en: 'About Us — P.H. Foods Thailand' },
+    'activity.html': { th: 'กิจกรรม — P.H. Foods Thailand',            en: 'Activities — P.H. Foods Thailand' },
+    'advertise.html':{ th: 'โฆษณา TVC — P.H. Foods Thailand',          en: 'TVC Commercials — P.H. Foods Thailand' },
+    'career.html':   { th: 'ร่วมงานกับเรา — P.H. Foods Thailand',      en: 'Careers — P.H. Foods Thailand' },
+    'contact.html':  { th: 'ติดต่อเรา — P.H. Foods Thailand',          en: 'Contact Us — P.H. Foods Thailand' },
+    'products.html': { th: 'ผลิตภัณฑ์ — P.H. Foods Thailand',          en: 'Products — P.H. Foods Thailand' },
+    'question.html': { th: 'คำถามที่พบบ่อย — P.H. Foods Thailand',    en: 'FAQ — P.H. Foods Thailand' },
+    'team.html':     { th: 'ทีมงาน — P.H. Foods Thailand',             en: 'Our Team — P.H. Foods Thailand' },
+  };
+  const META_DESC = {
+    th: 'บริษัท พี.เอช.ฟู้ดส์ จำกัด ผู้ผลิตขนมทอดกรอบและขนมอบกรอบตราปูไทยและโรโด้ ก่อตั้งมาตั้งแต่ปี พ.ศ. 2493',
+    en: 'P.H. Foods Co., Ltd. — producer of crispy fried and baked snacks under the Pu Thai and Rodo brands, established since 1950.',
+  };
+
   const NAV_EN = {
     'เกี่ยวกับเรา':'About Us','ผลิตภัณฑ์':'Products','ทีมงาน':'Team',
     'โฆษณา':'Advertising','คำถาม':'FAQ','ติดต่อเรา':'Contact Us','ร่วมงาน':'Careers',
@@ -179,6 +330,13 @@ if ('IntersectionObserver' in window) {
     document.querySelectorAll('.search-wrap input').forEach(el => {
       el.placeholder = lang === 'en' ? 'Search…' : 'ค้นหา / Search…';
     });
+    document.querySelectorAll('.hamburger[data-label-en]').forEach(el => {
+      el.setAttribute('aria-label', lang === 'en' ? el.dataset.labelEn : el.dataset.labelTh);
+    });
+    const page = location.pathname.split('/').pop() || 'index.html';
+    if (PAGE_TITLES[page]) document.title = PAGE_TITLES[page][lang] || PAGE_TITLES[page].th;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', lang === 'en' ? META_DESC.en : META_DESC.th);
     localStorage.setItem('ph_lang', lang);
     document.documentElement.lang = lang === 'en' ? 'en' : 'th';
   }
